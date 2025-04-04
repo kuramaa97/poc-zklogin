@@ -67,7 +67,7 @@ export default function Home() {
                     redirect_uri: customRedirectUri
                 }).toString(),
                 // Test Client ID for devnet / testnet:
-                client_id: '595966210064-3nnnqvmaelqnqsmq448kv05po362smt2.apps.googleusercontent.com',
+                client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '321294619776-pkrnqdi8ra6gvsu2fqf7k7ebt176ioso.apps.googleusercontent.com',
                 redirect_uri: REDIRECT_URI,
                 response_type: 'id_token',
                 scope: 'openid',

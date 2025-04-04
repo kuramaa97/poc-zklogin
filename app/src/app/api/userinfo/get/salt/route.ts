@@ -33,21 +33,25 @@ export async function POST(request: NextRequest) {
 }
 
 async function getSaltFromMystenAPI(jwtEncoded : string ){
-    const url : string = process.env.NEXT_PUBLIC_SALT_API || "https://salt.api.mystenlabs.com/get_salt";
-    const payload = {token: jwtEncoded};
+//     const url : string = process.env.NEXT_PUBLIC_SALT_API || "https://salt.api.mystenlabs.com/get_salt";
+//     const payload = {token: jwtEncoded};
 
-    const response = await fetch(url!, {
-        method: "POST",
-        mode: "cors",
-        cache: "no-cache",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        referrerPolicy: "no-referrer",
-        body: JSON.stringify(payload),
-    });
-   const responseJson = await response.json();
-   return responseJson.salt;
+//     const response = await fetch(url!, {
+//         method: "POST",
+//         mode: "cors",
+//         cache: "no-cache",
+//         headers: {
+//             "Content-Type": "application/json",
+//         },
+//         referrerPolicy: "no-referrer",
+//         body: JSON.stringify(payload),
+//     });
+//    const responseJson = await response.json();
+
+   //Salt hardcoded for testing
+   const salt = "129390038577185583942388216820280642146";
+   console.log("getSaltFromMystenAPI return: ", salt);
+   return salt;
 }
 
 async function getExisting(dataRequest: GetSaltRequest) : Promise<GetSaltResponse | null> {

@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
 
 async function getZKPFromProver(zkpPayload : any) {
     console.log("ZK Proof not found in database. Creating proof from prover...");
-    const proverURL = process.env.NEXT_PUBLIC_PROVER_API || "https://prover.mystenlabs.com/v1";
+    const proverURL = process.env.NEXT_PUBLIC_PROVER_API || "https://prover-dev.mystenlabs.com/v1";
     return await axios.post(proverURL, zkpPayload);
 }
 
